@@ -31,17 +31,21 @@ export default {
 </script>
 
 <style>
-
 .content{
   margin-bottom: 50px;
   background-color: deeppink
 }
-
 .router-link-active{
   color:#38f!important
 }
 .van-tabbar-item__text > a{
   color:black
+}
+.van-tab--active{
+  color: #38f!important;
+}
+.van-tabs__nav-bar{
+      background-color: #38f!important;
 }
 
 </style>
