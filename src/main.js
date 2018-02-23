@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Home from "./components/Home.vue";
+import Detail from "./components/Detail.vue";
 import My from "./components/My.vue";
 
 import axios from 'axios';
@@ -21,6 +22,7 @@ Vue.use(Vant)
 
 const routes = [
   { path: '/home', component: Home },
+  { path: '/detail/:id', component: Detail },
   { path: '/my', component: My }
 ]
 

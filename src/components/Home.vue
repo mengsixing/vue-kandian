@@ -13,7 +13,7 @@
         </van-swipe-item>
       </van-swipe>
       <div class="news_list">
-        <div class="news_list-item" v-for="(newsItem,index) in newsList"  :key="index">
+        <div class="news_list-item" v-for="(newsItem,index) in newsList"  :key="index" @click="gotoDetail(newsItem)">
           <van-card
             :thumb="newsItem.litpic.includes('http') ? newsItem.litpic : 'http://211.149.160.35' + newsItem.litpic"
           >
@@ -64,14 +64,6 @@ export default {
       imageURL: "http://www.ikandian.com.cn/uploads/aImages/Banner_WZ_KD.jpg"
     };
   },
-  computed: {
-    imagesTest() {
-      return [
-        "http://www.ikandian.com.cn/uploads/aImages/Banner_KD.jpg",
-        "http://www.ikandian.com.cn/uploads/aImages/Banner_WZ_KD.jpg"
-      ];
-    }
-  },
   created() {
     that = this;
     //获取头部tags信息
@@ -117,7 +109,7 @@ export default {
     if (bScroll) {
       bScroll.refresh();
     } else {
-        that.scroller = new BScroll(that.$refs.newsListWrapper, {
+      that.scroller = new BScroll(that.$refs.newsListWrapper, {
         click: true,
         scrollbar: {
           fade: true,
@@ -144,43 +136,35 @@ export default {
             });
         }
       });
-      
-      
     }
   },
-  updated() {
-    var that = this;
-    var bScroll = that.scroller;
-    if (bScroll) {
-      bScroll.refresh();
-    } 
-  },
-  methods:{
-    getNewsList(index){
+  methods: {
+    getNewsList(index) {
       //获取新闻列表信息
-        var cid = that.tagList[index].id;
-        axios
-          .get("/api/news/news_list?cid=" + cid + "&offset=0")
-          .then(function(response) {
-            if (response.data.code === 0) {
-              if (response.data.data.dataList.length > 0) {
-                that.cid = cid;
-                that.pageIndex = 1;
-                that.newsList = response.data.data.dataList;
-              } else {
-                that.cid = cid;
-              }
+      var cid = that.tagList[index].id;
+      axios
+        .get("/api/news/news_list?cid=" + cid + "&offset=0")
+        .then(function(response) {
+          if (response.data.code === 0) {
+            if (response.data.data.dataList.length > 0) {
+              that.cid = cid;
+              that.pageIndex = 1;
+              that.newsList = response.data.data.dataList;
+            } else {
+              that.cid = cid;
             }
-          });
+          }
+        });
+    },
+    gotoDetail(newsItem) {
+      that.$router.push("/detail/" + newsItem.id);
     }
   }
-
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .swipe_image {
   height: 175px;
   width: 100%;
@@ -189,21 +173,20 @@ export default {
   font-size: 12px;
   color: gray;
 }
-.newsListWrapper{
-  position:absolute;
-    overflow: hidden;
-    top: 84px;
-    bottom: 0;
-    left: 0;
-    right: 0
+.newsListWrapper {
+  position: absolute;
+  overflow: hidden;
+  top: 84px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.home{
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    bottom: 50px;
-    left: 0;
-    right: 0
-
+.home {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 50px;
+  left: 0;
+  right: 0;
 }
 </style>

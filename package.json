@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.8.1",
+    "js-base64": "^2.4.3",
     "vant": "^0.12.10",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1"

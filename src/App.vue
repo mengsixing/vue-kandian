@@ -22,8 +22,8 @@ export default {
   methods:{
     xxx(active){
       switch(active){
-        case 0: this.$router.push('home');break;
-        case 1: this.$router.push('my');break;
+        case 0: this.$router.push('/home');break;
+        case 1: this.$router.push('/my');break;
       }
     }
   }
@@ -31,9 +31,8 @@ export default {
 </script>
 
 <style>
-.content{
-  margin-bottom: 50px;
-  background-color: deeppink
+.van-card{
+  background-color: white;
 }
 .router-link-active{
   color:#38f!important
@@ -46,6 +45,9 @@ export default {
 }
 .van-tabs__nav-bar{
       background-color: #38f!important;
+}
+.van-button--bottom-action{
+  background-color: #38f!important;
 }
 
 </style>

@@ -1,37 +1,51 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="my">
+    <Header msg="我的"></Header>
+    <div class="my-content">
+      <van-icon name="fail" />
+    </div>
+    <div class="my-info">温馨提示</div>
+    <van-cell-group>
+      <van-field
+        :value="number"
+        label="阅读数"
+        disabled
+      />
+    </van-cell-group>
+    <van-button type="default" bottom-action @click="addNumber">手动+1</van-button>
   </div>
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
   name: 'My',
-  props: {
-    msg2: String
-  },
   data(){
     return {
-      msg : '页面加载于 ' + new Date().toLocaleString()
+      number:0
+    }
+  },
+  components:{
+    Header
+  },
+  methods:{
+    addNumber(){
+      this.number++;
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.my-content{
+  text-align: center;
+  font-size: 40px;
+  padding-top: 60px;
+  color: #38f
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.my-info{
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 </style>

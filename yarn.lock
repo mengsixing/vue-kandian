@@ -3529,7 +3529,7 @@ joi@^12.0.0:
     isemail "3.x.x"
     topo "2.x.x"
 
-js-base64@^2.1.9:
+js-base64@^2.1.9, js-base64@^2.4.3:
   version "2.4.3"
   resolved "http://registry.npm.taobao.org/js-base64/download/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
 
