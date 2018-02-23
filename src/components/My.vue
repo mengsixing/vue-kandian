@@ -18,32 +18,31 @@
 
 <script>
 import Header from "./Header.vue";
+import { mapGetters } from "vuex";
 export default {
-  name: 'My',
-  data(){
-    return {
-      number:0
-    }
-  },
-  components:{
+  name: "My",
+  components: {
     Header
   },
-  methods:{
-    addNumber(){
-      this.number++;
+  computed: {
+    ...mapGetters(["number"])
+  },
+  methods: {
+    addNumber() {
+      this.$store.dispatch("increment");
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.my-content{
+.my-content {
   text-align: center;
   font-size: 40px;
   padding-top: 60px;
-  color: #38f
+  color: #38f;
 }
-.my-info{
+.my-info {
   text-align: center;
   font-size: 16px;
   margin-bottom: 40px;

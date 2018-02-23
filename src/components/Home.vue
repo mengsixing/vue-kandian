@@ -7,35 +7,33 @@
     </van-tabs>
     <div class="newsListWrapper" ref="newsListWrapper">
       <div>
-<van-swipe :autoplay="3000">
-        <van-swipe-item  v-for="(item, index) in bannerList" :key="index">
-          <img v-lazy="item.pic" class="swipe_image" />
-        </van-swipe-item>
-      </van-swipe>
-      <div class="news_list">
-        <div class="news_list-item" v-for="(newsItem,index) in newsList"  :key="index" @click="gotoDetail(newsItem)">
-          <van-card
-            :thumb="newsItem.litpic.includes('http') ? newsItem.litpic : 'http://211.149.160.35' + newsItem.litpic"
-          >
-          <div slot="title">
-          &nbsp;
-          </div>
-          <div slot="desc">
-            {{newsItem.title}}
-          </div>
-          <div slot="footer">
-            <div class="card_footer">
-              <span> {{newsItem.news_from}}</span>    
-              <span> 阅读数：{{newsItem.click}}</span>
+        <van-swipe :autoplay="3000">
+          <van-swipe-item  v-for="(item, index) in bannerList" :key="index">
+            <img v-lazy="item.pic" class="swipe_image" />
+          </van-swipe-item>
+        </van-swipe>
+        <div class="news_list">
+          <div class="news_list-item" v-for="(newsItem,index) in newsList"  :key="index" @click="gotoDetail(newsItem)">
+            <van-card
+              :thumb="newsItem.litpic.includes('http') ? newsItem.litpic : 'http://211.149.160.35' + newsItem.litpic"
+            >
+            <div slot="title">
+            &nbsp;
             </div>
-          </div>
-          </van-card>
-        </div>  
+            <div slot="desc">
+              {{newsItem.title}}
+            </div>
+            <div slot="footer">
+              <div class="card_footer">
+                <span> {{newsItem.news_from}}</span>    
+                <span> 阅读数：{{newsItem.click}}</span>
+              </div>
+            </div>
+            </van-card>
+          </div>  
+        </div>
       </div>
-      </div>
-      
     </div>
-    
   </div>
 </template>
 
@@ -60,8 +58,7 @@ export default {
       newsList: [],
       cid: 0,
       scroller: "",
-      pageIndex: 0,
-      imageURL: "http://www.ikandian.com.cn/uploads/aImages/Banner_WZ_KD.jpg"
+      pageIndex: 0
     };
   },
   created() {
@@ -158,12 +155,12 @@ export default {
     },
     gotoDetail(newsItem) {
       that.$router.push("/detail/" + newsItem.id);
+      that.$store.dispatch("increment");
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .swipe_image {
   height: 175px;

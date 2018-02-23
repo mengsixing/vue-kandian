@@ -66,9 +66,6 @@ export default {
           interactive: false
         }
       });
-      setTimeout(function() {
-        that.scroller.refresh();
-      }, 2000);
     }
   },
   methods: {

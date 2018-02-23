@@ -10,6 +10,7 @@
 ### redux分支
 - vue
 - vue-router
+- vuex
 - axios
 - vant UI
 
