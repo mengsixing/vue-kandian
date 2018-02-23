@@ -1,7 +1,7 @@
 # vue-kandian 
 
-
-[演示地址](http://yinhengli.com)
+* [演示地址](http://yinhengli.com)
+* [vue版](https://github.com/yhlben/react-kandian)
 
 一个简易的新闻站点
 
