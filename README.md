@@ -6,8 +6,6 @@
 * [react版](https://github.com/yhlben/react-kandian)
 * [angular版](https://github.com/yhlben/angular-kandian)
 
----
-
 ## 技术结构
 
 - vue
@@ -16,11 +14,11 @@
 - axios
 - vant UI
 
-## 脚手架工具:
+## 脚手架工具
 
 - vue-cli
 
-## 运行方式:
+## 运行方式
 
 ### yarn启动
 
