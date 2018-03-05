@@ -1,29 +1,33 @@
 # vue-kandian 
 
+一个简易的新闻站点
+
 * [演示地址](http://yinhengli.com)
 * [react版](https://github.com/yhlben/react-kandian)
-
-一个简易的新闻站点
+* [angular版](https://github.com/yhlben/angular-kandian)
 
 ---
 
-### redux分支
+## 技术结构
+
 - vue
 - vue-router
 - vuex
 - axios
 - vant UI
 
-### 脚手架工具:
+## 脚手架工具:
+
 - vue-cli
 
-### 运行方式:
-1、yarn启动
+## 运行方式:
+
+### yarn启动
 
 - yarn install
 - yarn serve  
 
-2、npm启动
+### npm启动
 
 - npm install
 - npm serve
