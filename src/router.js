@@ -5,6 +5,7 @@ import Detail from "./components/Detail.vue";
 import My from "./components/My.vue";
 
 const routes = [
+  { path: '/', redirect:'/home' },
   { path: '/home', component: Home },
   { path: '/detail/:id', component: Detail },
   { path: '/my', component: My }
