@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header msg="首页"></Header>
+    <Header title="首页"></Header>
     <van-tabs @click="getNewsList">
       <van-tab v-for="item in tagList" :key="item.id" :title="item.name">
       </van-tab>

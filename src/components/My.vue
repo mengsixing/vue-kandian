@@ -1,6 +1,6 @@
 <template>
   <div class="my">
-    <Header msg="我的"></Header>
+    <Header title="我的"></Header>
     <div class="my-content">
       <van-icon name="fail" />
     </div>
